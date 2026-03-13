@@ -18,11 +18,16 @@ Follow these steps in exact order. **Stop the per-part loop strictly after Step 
 ### Step 1 & 2: PARTIAL PROCESSING (LOOP)
 For **each** resulting part file ([folder]/[source]_partX.txt), execute the following:
 
-#### 1. Narrative Generation & QA Loop
+#### 1. Narrative Generation & Continuous QA Loop (Min. 2 Revisions)
 1.  **Generate Draft:** Activate `mythology-content-manager` (**MODE 1**). Save as `[folder]/[source]_partX-draft.txt`.
-2.  **Proofread:** Activate `mythology-content-editor`. Compare `[source]_partX.txt` (Original) vs `[source]_partX-draft.txt` (Draft).
-3.  **Evaluate & Manage:** Activate `mythology-content-manager` (**MODE 2**). Use the report to determine the path (**Path A, B, or C**).
-4.  **Refine (if required):** If the manager requires revision, activate `mythology-content-manager` (**MODE 3**). Save finalized version as `[folder]/[source]_partX-narration.txt`.
+2.  **REFINEMENT LOOP (Perform at least TWO full refinement cycles):**
+    a. **Proofread:** Activate `mythology-content-editor`. Compare `[source]_partX.txt` (Original) vs the latest draft.
+    b. **Evaluate & Manage:** Activate `mythology-content-manager` (**MODE 2**). Determine the path.
+    c. **Decision Gate:**
+       - **Cycles 1 & 2 (Mandatory):** Even if the Editor finds no violations, issue a **"Path A: Direct Refinement"** command to improve the rhythmic flow, add deeper sensory details (Rule of Three), or find a better campfire "hook."
+       - **Refine:** Activate `mythology-content-manager` (**MODE 3**) using the instruction. Overwrite the previous version.
+       - **Post-Cycle 2:** Only exit the loop if the Manager returns **"Path C (Finalize)"**. Otherwise, continue refining.
+    d. **Finalize:** Once Path C is achieved AND min revisions are met, save as `[folder]/[source]_partX-narration.txt`.
 
 #### 2. Hindi Translation
 1.  **Translate:** Take the final `[folder]/[source]_partX-narration.txt` and activate `mythology-hindi-translator`. Save as `[folder]/[source]_partX-hindi.txt`.
